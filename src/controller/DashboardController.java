@@ -3,6 +3,7 @@ package controller;
 import view.DashboardView;
 import view.InventoryView;
 import view.LoginView;
+import view.POSView;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -16,7 +17,15 @@ public class DashboardController {
     public DashboardController(DashboardView dashboardView) {
         this.dashboardView = dashboardView;
 
-        // 1. Inventory Button Click Event
+        // 1. POS & Billing Button Click Event (NEW)
+        this.dashboardView.getBtnPOS().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openPOSPanel();
+            }
+        });
+
+        // 2. Inventory Button Click Event
         this.dashboardView.getBtnInventory().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -24,7 +33,7 @@ public class DashboardController {
             }
         });
 
-        // 2. Logout Button Click Event
+        // 3. Logout Button Click Event
         this.dashboardView.getBtnLogout().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,29 +42,37 @@ public class DashboardController {
         });
     }
 
-    // Method to open the Inventory View inside the Dashboard
+    // --- Methods to Open Different Panels ---
+
+    // Open POS View
+    private void openPOSPanel() {
+        POSView posView = new POSView();
+        POSController posController = new POSController(posView);
+
+        changeContentPanel(posView);
+    }
+
+    // Open Inventory View
     private void openInventoryPanel() {
-        // Create the view and its controller
         InventoryView inventoryView = new InventoryView();
         InventoryController inventoryController = new InventoryController(inventoryView);
 
-        // Get the center panel from Dashboard
+        changeContentPanel(inventoryView);
+    }
+
+    // Helper method to change the center panel smoothly
+    private void changeContentPanel(JPanel newPanel) {
         JPanel contentPanel = dashboardView.getContentPanel();
-
-        // Remove old screens and add the new Inventory View
         contentPanel.removeAll();
-        contentPanel.add(inventoryView, BorderLayout.CENTER);
-
-        // Refresh the UI to show changes
+        contentPanel.add(newPanel, BorderLayout.CENTER);
         contentPanel.revalidate();
         contentPanel.repaint();
     }
 
-    // Method to handle user logout
+    // Handle Logout
     private void logoutSystem() {
         dashboardView.dispose(); // Close Dashboard
 
-        // Open Login Screen again
         LoginView loginView = new LoginView();
         LoginController loginController = new LoginController(loginView);
         loginView.setVisible(true);

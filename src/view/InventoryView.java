@@ -27,7 +27,7 @@ public class InventoryView extends JPanel {
         setBackground(Color.WHITE);
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // --- Top: Title ---
+        // ---  Top: Title ---
         JLabel lblTitle = new JLabel("Inventory Management");
         lblTitle.setFont(new Font("Arial", Font.BOLD, 22));
         add(lblTitle, BorderLayout.NORTH);

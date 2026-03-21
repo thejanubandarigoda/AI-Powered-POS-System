@@ -7,7 +7,7 @@ public class Product {
     private double unitPrice;
     private int stockQuantity;
 
-    // Constructor to initialize a Product object
+    //  Constructor to initialize a Product object
     public Product(String itemCode, String productName, double unitPrice, int stockQuantity) {
         this.itemCode = itemCode;
         this.productName = productName;

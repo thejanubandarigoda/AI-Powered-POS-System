@@ -170,7 +170,7 @@ public class POSController {
                 pstItems.setDouble(4, item.getSubTotal());
                 pstItems.executeUpdate();
 
-                // Reduce stock
+                //  Reduce stock
                 pstStock.setInt(1, item.getQuantity());
                 pstStock.setString(2, item.getItemCode());
                 pstStock.executeUpdate();

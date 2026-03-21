@@ -66,7 +66,7 @@ public class LoginView extends JFrame {
         add(mainPanel);
     }
 
-    // Getters for the Controller to access field values
+    //  Getters for the Controller to access field values
     public String getUsername() {
         return txtUsername.getText();
     }

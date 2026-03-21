@@ -9,7 +9,7 @@ public class CartItem {
     private double unitPrice;
     private double subTotal;
 
-    // Constructor
+    // C onstructor
     public CartItem(String itemCode, String productName, int quantity, double unitPrice, double subTotal) {
         this.itemCode = itemCode;
         this.productName = productName;

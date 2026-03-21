@@ -116,7 +116,7 @@ public class POSView extends JPanel {
         add(bottomPanel, BorderLayout.SOUTH);
     }
 
-    // Getters for the Controller
+    //  Getters for the Controller
     public String getItemCode() { return txtItemCode.getText(); }
     public String getQuantity() { return txtQuantity.getText(); }
     public String getCashPaid() { return txtCashPaid.getText(); }

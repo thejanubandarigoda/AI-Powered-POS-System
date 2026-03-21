@@ -16,7 +16,7 @@ public class DashboardView extends JFrame {
     private JButton btnBackup;
     private JButton btnLogout;
 
-    // Main content panel
+    //  Main content panel
     private JPanel contentPanel;
 
     public DashboardView(String role, String username) {

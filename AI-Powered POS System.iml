@@ -11,6 +11,20 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/connecter/mysql-connector-j-9.6.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/connecter/protobuf-java-4.31.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$MODULE_DIR$/connecter/commons-beanutils-1.9.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/connecter/commons-collections-3.2.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/connecter/commons-digester-2.1.jar!/" />
+        </JAVADOC>
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/connecter/commons-logging-1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -20,6 +34,33 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/connecter/jasperreports-7.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/connecter/jasperreports-6.21.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jasperreports-6.20.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/connecter/ecj-3.21.0-.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

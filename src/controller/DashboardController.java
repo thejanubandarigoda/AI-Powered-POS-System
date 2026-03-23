@@ -4,7 +4,7 @@ import view.DashboardView;
 import view.InventoryView;
 import view.LoginView;
 import view.POSView;
-import view.AIInsightsView; // AI View එක Import කිරීම
+import view.AIInsightsView;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -25,10 +25,13 @@ public class DashboardController {
         // 3. Reports Button Click Event
         this.dashboardView.getBtnReports().addActionListener(e -> generateReports());
 
-        // 4. AI Insights Button Click Event (අලුතින් එකතු කරපු එක)
+        // 4. AI Insights Button Click Event
         this.dashboardView.getBtnAIInsights().addActionListener(e -> openAIPanel());
 
-        // 5. Logout Button Click Event
+        // 5. Database Backup Button Click Event (අලුතින් එකතු කළා)
+        this.dashboardView.getBtnBackup().addActionListener(e -> runDatabaseBackup());
+
+        // 6. Logout Button Click Event
         this.dashboardView.getBtnLogout().addActionListener(e -> logoutSystem());
     }
 
@@ -48,11 +51,17 @@ public class DashboardController {
         changeContentPanel(inventoryView);
     }
 
-    // Open AI Insights View (අලුතින් එකතු කරපු Method එක)
+    // Open AI Insights View
     private void openAIPanel() {
         AIInsightsView aiView = new AIInsightsView();
         AIInsightsController aiController = new AIInsightsController(aiView);
         changeContentPanel(aiView);
+    }
+
+    // Database Backup එක පටන් ගන්න Method එක
+    private void runDatabaseBackup() {
+        // BackupController එකේ තියෙන static method එකට Dashboard එකේ frame එක යවනවා
+        BackupController.backupDatabase(dashboardView);
     }
 
     // Generate Reports using Jasper

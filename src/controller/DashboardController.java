@@ -7,8 +7,6 @@ import view.POSView;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class DashboardController {
 
@@ -17,38 +15,25 @@ public class DashboardController {
     public DashboardController(DashboardView dashboardView) {
         this.dashboardView = dashboardView;
 
-        // 1. POS & Billing Button Click Event (NEW)
-        this.dashboardView.getBtnPOS().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openPOSPanel();
-            }
-        });
+        // 1. POS & Billing Button Click Event (Using Lambda Expression)
+        this.dashboardView.getBtnPOS().addActionListener(e -> openPOSPanel());
 
         // 2. Inventory Button Click Event
-        this.dashboardView.getBtnInventory().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openInventoryPanel();
-            }
-        });
+        this.dashboardView.getBtnInventory().addActionListener(e -> openInventoryPanel());
 
-        // 3. Logout Button Click Event
-        this.dashboardView.getBtnLogout().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                logoutSystem();
-            }
-        });
+        // 3. Reports Button Click Event
+        this.dashboardView.getBtnReports().addActionListener(e -> generateReports());
+
+        // 4. Logout Button Click Event
+        this.dashboardView.getBtnLogout().addActionListener(e -> logoutSystem());
     }
 
-    // --- Methods to Open Different Panels ---
+    // --- Methods to Open Different Panels & Actions ---
 
     // Open POS View
     private void openPOSPanel() {
         POSView posView = new POSView();
         POSController posController = new POSController(posView);
-
         changeContentPanel(posView);
     }
 
@@ -56,8 +41,13 @@ public class DashboardController {
     private void openInventoryPanel() {
         InventoryView inventoryView = new InventoryView();
         InventoryController inventoryController = new InventoryController(inventoryView);
-
         changeContentPanel(inventoryView);
+    }
+
+    // Generate Reports using Jasper
+    private void generateReports() {
+        // Calls the ReportController to generate and display the Jasper Report
+        ReportController.generateDailySalesReport();
     }
 
     // Helper method to change the center panel smoothly

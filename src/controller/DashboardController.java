@@ -4,6 +4,7 @@ import view.DashboardView;
 import view.InventoryView;
 import view.LoginView;
 import view.POSView;
+import view.AIInsightsView; // AI View එක Import කිරීම
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -15,7 +16,7 @@ public class DashboardController {
     public DashboardController(DashboardView dashboardView) {
         this.dashboardView = dashboardView;
 
-        // 1. POS & Billing Button Click Event (Using Lambda Expression)
+        // 1. POS & Billing Button Click Event
         this.dashboardView.getBtnPOS().addActionListener(e -> openPOSPanel());
 
         // 2. Inventory Button Click Event
@@ -24,7 +25,10 @@ public class DashboardController {
         // 3. Reports Button Click Event
         this.dashboardView.getBtnReports().addActionListener(e -> generateReports());
 
-        // 4. Logout Button Click Event
+        // 4. AI Insights Button Click Event (අලුතින් එකතු කරපු එක)
+        this.dashboardView.getBtnAIInsights().addActionListener(e -> openAIPanel());
+
+        // 5. Logout Button Click Event
         this.dashboardView.getBtnLogout().addActionListener(e -> logoutSystem());
     }
 
@@ -44,9 +48,15 @@ public class DashboardController {
         changeContentPanel(inventoryView);
     }
 
+    // Open AI Insights View (අලුතින් එකතු කරපු Method එක)
+    private void openAIPanel() {
+        AIInsightsView aiView = new AIInsightsView();
+        AIInsightsController aiController = new AIInsightsController(aiView);
+        changeContentPanel(aiView);
+    }
+
     // Generate Reports using Jasper
     private void generateReports() {
-        // Calls the ReportController to generate and display the Jasper Report
         ReportController.generateDailySalesReport();
     }
 

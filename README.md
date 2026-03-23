@@ -8,6 +8,12 @@ A modern, highly scalable, and intelligent Point of Sale (POS) and Inventory Man
 ![Ollama AI](https://img.shields.io/badge/Ollama_Local_AI-FFA500?style=for-the-badge&logo=ollama&logoColor=white)
 
 ---
+<img width="984" height="587" alt="Screenshot 2026-03-23 222251" src="https://github.com/user-attachments/assets/58a0219e-1ec9-46e4-b742-b94c7c49ee05" />
+
+<img width="982" height="587" alt="Screenshot 2026-03-23 222257" src="https://github.com/user-attachments/assets/729d7198-78ed-48e7-9733-4dfe42ca9859" />
+
+<img width="980" height="586" alt="Screenshot 2026-03-23 222343" src="https://github.com/user-attachments/assets/588531de-0a03-408b-9b1f-1c5cc62c9d06" />
+
 
 ## ✨ Key Features
 
